@@ -76,6 +76,10 @@ class SimBlockDeviceMegaBoomV3Config extends Config(
 // Use for PD exploration
 // ---------------------
 
+class SmallBoomV4PrefetchConfig extends Config(
+  new boom.v4.common.WithNSmallBoomsPrefetch(1) ++                          // small boom config
+  new chipyard.config.AbstractConfig)
+
 class SmallBoomV4Config extends Config(
   new boom.v4.common.WithNSmallBooms(1) ++                          // small boom config
   new chipyard.config.AbstractConfig)
