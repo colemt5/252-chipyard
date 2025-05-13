@@ -78,14 +78,22 @@ class SimBlockDeviceMegaBoomV3Config extends Config(
 
 class IndirectPrefetchSmallBoomV4Config extends Config(
   new boom.v4.common.WithNSmallBoomsPrefetch(1, "Indirect") ++         // small boom config
+  new freechips.rocketchip.subsystem.WithoutTLMonitors ++
   new chipyard.config.AbstractConfig)
 
 class StridePrefetchSmallBoomV4Config extends Config(
   new boom.v4.common.WithNSmallBoomsPrefetch(1, "Stride") ++         // small boom config
+  new freechips.rocketchip.subsystem.WithoutTLMonitors ++
   new chipyard.config.AbstractConfig)
 
 class NLPrefetchSmallBoomV4Config extends Config(
   new boom.v4.common.WithNSmallBoomsPrefetch(1, "NL") ++                          // small boom config
+  new freechips.rocketchip.subsystem.WithoutTLMonitors ++
+  new chipyard.config.AbstractConfig)
+
+class NoPrefetchSmallBoomV4Config extends Config(
+  new boom.v4.common.WithNSmallBoomsPrefetch(1, "Null") ++                          // small boom config
+  new freechips.rocketchip.subsystem.WithoutTLMonitors ++
   new chipyard.config.AbstractConfig)
 
 class SmallBoomV4Config extends Config(
